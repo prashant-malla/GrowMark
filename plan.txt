@@ -1,0 +1,4 @@
+1. home page /  - index.blade.php
+2. about page /about - about.blade.php
+3. service page /services - service.blade.php
+4.  project page /projects
