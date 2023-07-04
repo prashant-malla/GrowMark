@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::view('/', 'index');
 
-Route::get('about-us', function(){
-    return view('about');
-})->name('about');
+// Route::get('about-us', function(){
+//     return view('about');
+// })->name('about');
+Route::get('about-us', [AboutUsController::class, 'about'])->name('about');
 
 Auth::routes();
 

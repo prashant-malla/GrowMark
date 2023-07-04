@@ -2,3 +2,11 @@
 2. about page /about - about.blade.php
 3. service page /services - service.blade.php
 4.  project page /projects
+
+
+MVC
+1. Model - table
+Banner(Model) - banners(table)
+
+route > view
+route > controller - get data - return to view with data > view
