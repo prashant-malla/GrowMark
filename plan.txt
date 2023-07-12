@@ -10,3 +10,34 @@ Banner(Model) - banners(table)
 
 route > view
 route > controller - get data - return to view with data > view
+
+
+CRUD:
+Banner/Slider - table
+image,title,link,is_active  - columns
+
+1. make model with migrations and controller
+php artisan make:model Slider --mc
+https://laravel.com/docs/10.x/migrations#generating-migrations
+
+2. define routes for Slider
+/sliders - GET - give list of sliders
+
+/sliders/create - GET - create page
+a. form(method, action, enctype for image upload)
+b. input type with name
+c. csrf token
+d. submit button
+
+/sliders - POST - store a slider
+a. validate
+b. store
+c. return 
+
+/sliders/{id}/edit - GET - edit page
+
+/sliders/{id} - DELETE - delete
+a. form 
+b. confirm
+c. delete
+
