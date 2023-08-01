@@ -57,6 +57,7 @@ class SliderController extends Controller
         $success = $slider->update($validated);
 
         if ($success) {
+            Alert::success('Oh Yes!', 'slider updated.');
             session()->flash('success', 'slider updated successfully.');
         } else {
             session()->flash('error', 'something went wrong while updaing');
