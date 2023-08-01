@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Slider Create') }}</div>
+                    <div class="card-header">{{ __('Slider Edit') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,8 +14,9 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('sliders.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('sliders.update', $slider->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             @include('sliders.includes.form')
                         </form>
                     </div>

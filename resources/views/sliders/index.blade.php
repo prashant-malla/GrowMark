@@ -45,8 +45,8 @@
                                                 <span class="badge bg-danger">In Active</span>
                                             @endif
                                         </td>
-                                        <td>
-                                            <a href="">Edit</a>
+                                        <td class="d-flex gap-2">
+                                            <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-success btn-sm">Edit</a>
                                             <form action="{{ route('sliders.destroy', $slider->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
