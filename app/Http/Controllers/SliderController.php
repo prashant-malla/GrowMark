@@ -54,6 +54,21 @@ class SliderController extends Controller
         $validated = $request->validated();
 
         $slider = Slider::findOrFail($id);
+
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $imageName = 'slider' . date('Ymdhis') . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/sliders/'), $imageName);
+            $validated['image'] = $imageName;
+        }
+
+//         if ($request->image) {
+//             $request->file('image')->storePublicly(
+//                 'sliders',
+//                 $request->user()->id,
+//             );
+//         }
+// dd($validated);
         $success = $slider->update($validated);
 
         if ($success) {

@@ -34,9 +34,14 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $slider->title }}</td>
-                                        <td>Otto</td>
                                         <td>
-                                            <a href="{{ $slider->link}}" target="_blank">Visit</a>
+                                            @if (!empty($slider->image))
+                                                <img src="{{ asset('uploads/sliders/' . $slider->image) }}" alt=""
+                                                    height="50">
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ $slider->link }}" target="_blank">Visit</a>
                                         </td>
                                         <td>
                                             @if ($slider->is_active)
@@ -46,11 +51,13 @@
                                             @endif
                                         </td>
                                         <td class="d-flex gap-2">
-                                            <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{ route('sliders.edit', $slider->id) }}"
+                                                class="btn btn-success btn-sm">Edit</a>
                                             <form action="{{ route('sliders.destroy', $slider->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure?')">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('are you sure?')">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

@@ -24,7 +24,7 @@ class UpdateSliderRequest extends FormRequest
         return [
             'title' => 'nullable|max:255',
             'link' => 'nullable|max:255',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable',
             'is_active' => 'required|boolean'
         ];
     }
